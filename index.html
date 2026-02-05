@@ -1,210 +1,301 @@
 <!DOCTYPE html>
 <html lang="ta">
 <head>
-  <meta charset="UTF-8">
-  <title>Mr.Gold Kavithaigal</title>
+<meta charset="UTF-8">
+<title>Mr.Gold Kavithaigal</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Noto Serif Tamil', serif;
-      background: #f4e8d1;
-      color: #3a2e2a;
-    }
-
-    header {
-      text-align: center;
-      padding: 35px 20px;
-      border-bottom: 1px solid #c7b08b;
-    }
-
-    header h1 {
-      margin: 0;
-    }
-
-    .insta a {
-      text-decoration: none;
-      color: #6b4e2e;
-      font-style: italic;
-    }
-
-    .about {
-      max-width: 750px;
-      margin: 35px auto;
-      padding: 25px;
-      background: rgba(255,255,255,0.6);
-      line-height: 1.9;
-      border-left: 5px solid #8b6b3f;
-    }
-
-    .page {
-      display: none;
-      max-width: 750px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .page.active {
-      display: block;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      padding: 15px;
-      margin-bottom: 14px;
-      background: rgba(255,255,255,0.7);
-      cursor: pointer;
-      border-left: 4px solid #8b6b3f;
-    }
-
-    li:hover {
-      background: rgba(255,255,255,0.95);
-    }
-
-    pre {
-      white-space: pre-wrap;
-      line-height: 1.9;
-      font-size: 18px;
-    }
-
-    .back {
-      text-align: center;
-      margin-top: 40px;
-      cursor: pointer;
-      color: #6b4e2e;
-    }
-  </style>
+<style>
+body{
+  margin:0;
+  font-family:'Noto Serif Tamil',serif;
+  background:#f4e8d1;
+  color:#3a2e2a;
+}
+header{
+  text-align:center;
+  padding:35px 20px;
+  border-bottom:1px solid #c7b08b;
+}
+.author{
+  font-style:italic;
+  cursor:pointer;
+  color:#6b4e2e;
+}
+.insta a{
+  text-decoration:none;
+  color:#6b4e2e;
+}
+.page{
+  display:none;
+  max-width:900px;
+  margin:auto;
+  padding:25px;
+}
+.page.active{display:block;}
+.about-box{
+  background:rgba(255,255,255,0.75);
+  padding:30px;
+  line-height:2;
+  border-left:5px solid #8b6b3f;
+  margin-bottom:35px;
+}
+button{
+  padding:10px 30px;
+  background:#8b6b3f;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  font-family:inherit;
+}
+.center{text-align:center;}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+}
+.box{
+  background:rgba(255,255,255,0.85);
+  padding:20px;
+  text-align:center;
+  cursor:pointer;
+  border-left:4px solid #8b6b3f;
+}
+pre{
+  white-space:pre-wrap;
+  font-size:18px;
+  line-height:1.9;
+}
+.actions{
+  margin-top:25px;
+  display:flex;
+  gap:30px;
+  font-size:20px;
+}
+.actions i{cursor:pointer;color:#6b4e2e;}
+.comment-box{margin-top:30px;}
+.comment-box textarea{
+  width:100%;
+  height:80px;
+  font-family:inherit;
+  padding:10px;
+}
+.comment{
+  background:#fff;
+  margin-top:10px;
+  padding:10px;
+  border-left:3px solid #8b6b3f;
+}
+.back{
+  margin-top:40px;
+  cursor:pointer;
+  color:#6b4e2e;
+  text-align:center;
+}
+.count{
+  font-size:14px;
+  opacity:0.8;
+  margin-left:5px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <h1>Mr.Gold Kavithaigal</h1>
+  <div class="author" onclick="openAuthor()">— தங்க செல்வம்</div>
   <div class="insta">
-    Instagram :
     <a href="https://www.instagram.com/thangaselvam_16" target="_blank">
-      @mr gold kavithaigal
+      <i class="fa-brands fa-instagram"></i> @mr_gold_kavithaigal
     </a>
   </div>
 </header>
 
-<div class="about">
-  <b>About :</b><br><br>
-
-  “Mr.Gold Kavithaigal” என்பது ஒரு கவிதைத் தளம் மட்டும் அல்ல.  
-  அது பேசாமல் போன உணர்வுகளின் குரல்.  
-  வெளியில் சிரிப்பாக மறைக்கப்பட்ட வலிகள்,  
-  உள்ளுக்குள் மட்டும் வாழும் நினைவுகள்,  
-  சொல்ல நினைத்து சொல்ல முடியாமல் போன வார்த்தைகள் —  
-  இவை அனைத்தும் இங்கே கவிதைகளாக மாறுகின்றன.
-  <br><br>
-
-  வாழ்க்கை ஒவ்வொருவருக்கும் ஒரே மாதிரி நடந்துவிடுவதில்லை.  
-  சிலருக்கு காதல் கிடைக்கும்,  
-  சிலருக்கு அது நினைவாக மட்டுமே மாறிவிடும்.  
-  அந்த நினைவுகளோடு வாழ கற்றுக் கொள்ளும் பயணமே  
-  இந்தக் கவிதைகளின் அடிப்படை.
-  <br><br>
-
-  இங்கே உள்ள ஒவ்வொரு கவிதையும்  
-  எழுதுவதற்காக எழுதப்பட்டவை அல்ல.  
-  அனுபவித்து, உடைந்து,  
-  சில நேரங்களில் அமைதியாக அழுத பின்  
-  தானாகவே உருவான வரிகள்.
-  <br><br>
-
-  காதல் இங்கே வெறும் இனிமை அல்ல.  
-  அது காத்திருப்பாகவும் இருக்கலாம்,  
-  புரியாமையாகவும் இருக்கலாம்,  
-  ஒருபோதும் திரும்ப வராத ஒருவரின்  
-  கடைசி நினைவாகவும் இருக்கலாம்.  
-  காரணம், உண்மையான காதல்  
-  எப்போதும் முழுமையாகக் கிடைப்பதில்லை.
-  <br><br>
-
-  இந்தக் கவிதைகள் உங்களுக்குள்  
-  ஏதாவது ஒரு வரியில்  
-  “இத நான் தான்” என்று தோன்றினால்,  
-  அந்த உணர்வே இந்த தளத்தின்  
-  உண்மையான வெற்றி.
-  <br><br>
-
-  இது புகழுக்கான முயற்சி அல்ல.  
-  இது வைரலாகுவதற்கான தளமும் அல்ல.  
-  மனம் கனமான நேரங்களில்  
-  ஒரு கவிதை கூட சற்று ஆறுதலாக இருந்தால்,  
-  அதுவே போதும்.
-
-  <br><br>
-  <div style="text-align:right; font-style:italic; opacity:0.8;">
-    — Mr.Gold
-  </div>
-  <div style="text-align:right; font-size:14px; opacity:0.6;">
-    Words from lived moments
-  </div>
-</div>
-
 <!-- HOME -->
 <div id="home" class="page active">
-  <h2>கவிதை பட்டியல்</h2>
-  <ul id="kavithai-list"></ul>
+  <div class="about-box">
+    <b>About :</b><br><br>
+    Mr.Gold Kavithaigal என்பது எழுதப்பட்ட கவிதைகளின் தொகுப்பு அல்ல.  
+    அது வாழ்ந்து கடந்து வந்த நினைவுகளின் சாட்சியம்.  
+    சொல்ல முடியாத உணர்வுகள், வெளியில் தெரியாத வலிகள்,  
+    அமைதியாக அழுத இரவுகள் —  
+    இவை அனைத்தும் இங்கே கவிதைகளாக பேசுகின்றன.
+    <br><br>
+    இந்த வரிகள் யாரையும் கவர எழுதப்படவில்லை.  
+    தன்னைப் போலவே யாராவது ஒருவர்  
+    இந்த வரிகளில் தன்னை கண்டுகொண்டால் போதும்.
+    <br><br>
+    <div style="text-align:right;font-style:italic;">— Mr.Gold</div>
+  </div>
+
+  <div class="center">
+    <button onclick="openTitles()">கவிதை பட்டியல்</button>
+  </div>
 </div>
 
-<!-- KAVITHAI VIEW -->
-<div id="kavithai" class="page">
-  <h2 id="k-title"></h2>
-  <pre id="k-poem"></pre>
-  <div class="back" onclick="goHome()">← மீண்டும் கவிதை பட்டியல்</div>
+<!-- AUTHOR -->
+<div id="author" class="page">
+
+  <!-- SITE MEANING -->
+  <div class="about-box">
+    <b>Mr.Gold Kavithaigal :</b><br><br>
+    “Mr.Gold Kavithaigal” என்பது ஒரு இணையதளம் மட்டும் அல்ல.  
+    இது ஒரு மனநிலையின் வெளிப்பாடு.  
+    சொல்ல முடியாமல் உள்ளுக்குள் தங்கிய உணர்வுகள்  
+    வார்த்தைகளாக வெளியே வர ஒரு சிறிய முயற்சி.
+    <br><br>
+    எல்லா கவிதைகளும் அமைதியான நேரத்தில் எழுதப்படுவதில்லை.  
+    சில கவிதைகள் மனம் உடைந்த பிறகே பிறக்கின்றன.  
+    சில வரிகள் இரவின் மௌனத்தில்  
+    தூங்க விடாமல் கேட்ட கேள்விகளின் பதில்கள்.
+    <br><br>
+    இது புகழுக்கான பயணம் அல்ல.  
+    மனம் கனமாக இருக்கும் ஒருவருக்கு  
+    ஒரு கவிதை சற்று ஆறுதலாக இருந்தால்,  
+    அதுவே இந்த தளத்தின் உண்மையான நோக்கம்.
+    <br><br>
+    <div style="text-align:right;font-style:italic;">— Mr.Gold</div>
+  </div>
+
+  <!-- AUTHOR JOURNEY -->
+  <div class="about-box">
+    <b>எழுத்தாளர் பற்றி :</b><br><br>
+    என் பெயர் தங்க செல்வம்.  
+    எழுத வேண்டும் என்று ஒருநாள் முடிவு செய்து  
+    எழுத ஆரம்பித்தவன் அல்ல நான்.  
+    சொல்ல முடியாத உணர்வுகள்  
+    தானாகவே வார்த்தைகளாக மாறிய நேரங்களில்  
+    எழுத ஆரம்பித்தேன்.
+    <br><br>
+    காதல், பிரிவு, மௌனம், நினைவுகள் —  
+    இவை எல்லாம் என் வாழ்க்கையில்  
+    கடந்து வந்த உண்மைகள்.  
+    அதனால் தான் என் கவிதைகள்  
+    கற்பனைக்கானவை அல்ல,  
+    அனுபவங்களின் பிரதிபலிப்பு.
+    <br><br>
+    நான் ஒரு பெரிய கவிஞன் என்று  
+    என்னை நான் நினைத்ததில்லை.  
+    ஆனால் உண்மையாக எழுத முயன்றிருக்கிறேன்.  
+    அந்த உண்மை ஒருவருக்காவது  
+    ஆறுதலாக இருந்தால்  
+    அதுவே எனக்கு போதும்.
+  </div>
+
+  <div class="back" onclick="goHome()">← முகப்பு</div>
+</div>
+
+<!-- TITLES -->
+<div id="titles" class="page">
+  <h2>கவிதை பட்டியல்</h2>
+  <div class="grid" id="list"></div>
+  <div class="back" onclick="goHome()">← முகப்பு</div>
+</div>
+
+<!-- POEM -->
+<div id="poem" class="page">
+  <h2 id="pTitle"></h2>
+  <pre id="pBody"></pre>
+
+  <div class="actions">
+    <div onclick="likePoem()">
+      <i class="fa-regular fa-heart"></i>
+      <span class="count" id="likeCount">0</span>
+    </div>
+    <div onclick="focusComment()">
+      <i class="fa-regular fa-comment"></i>
+      <span class="count" id="commentCount">0</span>
+    </div>
+    <div onclick="sharePoem()">
+      <i class="fa-solid fa-share-nodes"></i>
+    </div>
+  </div>
+
+  <div class="comment-box">
+    <textarea id="commentInput" placeholder="உங்கள் கருத்தை எழுதுங்கள்..."></textarea><br><br>
+    <button onclick="addComment()">Comment</button>
+    <div id="comments"></div>
+  </div>
+
+  <div class="back" onclick="openTitles()">← கவிதை பட்டியல்</div>
 </div>
 
 <script>
-const kavithaigal = [
-  { title: "கனவு", poem: "என் வாழ்வில் கனவாக வந்தவள்\nஇன்று நினைவாக வாழ்கிறாள்..." },
-  { title: "அவள்", poem: "அவளை பார்த்து பிடித்து போன பின்பு\nஎந்த பெண்ணையும் பார்க்கவே பிடிக்கவில்லை.." },
-  { title: "உலறல்", poem: "உதறிச் சென்றவளுக்காக\nஉலறிக் கொண்டே இருக்கிறேன்..." },
-  { title: "கண்ணீர்", poem: "அவள் பிரிந்து சென்றதை புரிந்து கொள்ளாத வரை,\nகவலையாகத்தான் இருக்கும்,\nபுரிந்து கொண்டால் கண்ணீராக மாறிவிடும்...." },
-  { title: "பிடிவாதம்", poem: "அவளை மட்டும் பிடித்து போனதால் தான்\nஇன்று வரை பிடிவாதமாகவே இருக்கின்றேன்..." },
-  { title: "கவிதை", poem: "என்னுடைய சிறந்த கவிதை எதுவென்றால்\nஅது என் இறந்து போன காதல் தான்...." },
-  { title: "கானல்", poem: "காதல் அவள் என்னை கண்டு கொள்ளாமல் போனாலும்\nஒருநாளும் அவளை காணாமல் போனதில்லை நானும்..." }
+const poems=[
+{t:"கனவு",p:"என் வாழ்வில் கனவாக வந்தவள்\nஇன்று நினைவாக வாழ்கிறாள்..."},
+{t:"அவள்",p:"அவளை பார்த்து பிடித்து போன பின்பு\nஎந்த பெண்ணையும் பார்க்கவே பிடிக்கவில்லை.."},
+{t:"உலறல்",p:"உதறிச் சென்றவளுக்காக\nஉலறிக் கொண்டே இருக்கிறேன்..."},
+{t:"கண்ணீர்",p:"அவள் பிரிந்து சென்றதை புரிந்து கொள்ளாத வரை,\nகவலையாகத்தான் இருக்கும்,\nபுரிந்து கொண்டால் கண்ணீராக மாறிவிடும்...."},
+{t:"பிடிவாதம்",p:"அவளை மட்டும் பிடித்து போனதால் தான்\nஇன்று வரை பிடிவாதமாகவே இருக்கின்றேன்..."},
+{t:"கவிதை",p:"என்னுடைய சிறந்த கவிதை எதுவென்றால்\nஅது என் இறந்து போன காதல் தான்...."},
+{t:"கானல்",p:"காதல் அவள் என்னை கண்டு கொள்ளாமல் போனாலும்\nஒருநாளும் அவளை காணாமல் போனதில்லை நானும்..."},
+{t:"புள்ளி",p:"ஒவ்வொரு முற்றுப்புள்ளியிலும்,\nதொடர்கிறது மற்றொரு கதை..."},
+{t:"பேசாமலே",p:"ரொம்ப நாளா பேசிட்டு இருந்தவங்க,\nகொஞ்ச நாளா பேசாமலே இருக்காங்க,\nஇதுக்கு முன்னாடியே பேசாமலே இருந்திருக்கலாமே..."},
+{t:"அழைப்பு",p:"அழைக்காமலே வந்தவர்கள்\nஇப்போது அழைத்தாலும் வர மறுக்கிறார்கள்..."},
+{t:"காயம்",p:"ஒரு சிலரின் பேச்சால் காயப்பட்ட நான்\nயாரையும் காயப்படுத்தாமல் இருக்க\nமௌனமாய் இருக்கிறேன்..."},
+{t:"புரிதல்",p:"எனக்கு பிடிச்ச எல்லோருக்குமே\nஎன்ன பிடிக்கலனு அவங்க போனதுக்கு அப்புறம்தா புரிஞ்சுது..."},
+{t:"தேவதை",p:"படுப்பதற்காக தேவதை என்றவன்,\nபடுத்து விட்டு தேவுடியா என்றான்..."},
+{t:"உரிமை",p:"அவள் மீது உரிமை கொள்ள தான் என்னால் முடியாது\nஅவள் மீது கொண்ட காதலை உரிமை கொள்ள\nஎன்னை தவிர வேறு யாராலும் முடியாது..."}
 ];
 
-const list = document.getElementById("kavithai-list");
-const home = document.getElementById("home");
-const kavithaiPage = document.getElementById("kavithai");
-const titleEl = document.getElementById("k-title");
-const poemEl = document.getElementById("k-poem");
+const pages={home,author,titles,poem};
+let current="";
 
-kavithaigal.forEach(k => {
-  const li = document.createElement("li");
-  li.innerText = k.title;
-  li.onclick = () => openKavithai(k);
-  list.appendChild(li);
+function show(p){
+  Object.values(pages).forEach(x=>x.classList.remove("active"));
+  pages[p].classList.add("active");
+}
+function goHome(){show("home")}
+function openAuthor(){show("author")}
+function openTitles(){show("titles")}
+
+poems.forEach(k=>{
+  const d=document.createElement("div");
+  d.className="box";
+  d.innerText=k.t;
+  d.onclick=()=>{
+    current=k.t;
+    pTitle.innerText=k.t;
+    pBody.innerText=k.p;
+    loadLikes(); loadComments();
+    show("poem");
+  };
+  list.appendChild(d);
 });
 
-function openKavithai(k) {
-  titleEl.innerText = k.title;
-  poemEl.innerText = k.poem;
-  home.classList.remove("active");
-  kavithaiPage.classList.add("active");
+function likePoem(){
+  let c=localStorage.getItem("like_"+current)||0;
+  c++; localStorage.setItem("like_"+current,c);
+  likeCount.innerText=c;
 }
-
-function goHome() {
-  kavithaiPage.classList.remove("active");
-  home.classList.add("active");
+function loadLikes(){
+  likeCount.innerText=localStorage.getItem("like_"+current)||0;
+}
+function addComment(){
+  if(!commentInput.value.trim())return;
+  const a=JSON.parse(localStorage.getItem("com_"+current)||"[]");
+  a.push(commentInput.value);
+  localStorage.setItem("com_"+current,JSON.stringify(a));
+  commentInput.value=""; loadComments();
+}
+function loadComments(){
+  comments.innerHTML="";
+  const a=JSON.parse(localStorage.getItem("com_"+current)||"[]");
+  commentCount.innerText=a.length;
+  a.forEach(t=>{
+    const d=document.createElement("div");
+    d.className="comment"; d.innerText=t;
+    comments.appendChild(d);
+  });
+}
+function focusComment(){commentInput.focus()}
+function sharePoem(){
+  window.open("https://wa.me/?text="+encodeURIComponent(pTitle.innerText));
 }
 </script>
 
 </body>
 </html>
-
