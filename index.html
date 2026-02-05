@@ -189,8 +189,50 @@
       content: `மறக்க முயன்ற நினைவுகளே
 இன்று
 என்னை எழுத வைக்கின்றன…`
-    }
-  ];
+    },
+ {
+    title: "கனவு",
+    poem: "என் வாழ்வில் கனவாக வந்தவள்\nஇன்று நினைவாக வாழ்கிறாள்..."
+  },
+  {
+    title: "அவள்",
+    poem: "அவளை பார்த்து பிடித்து போன பின்பு\nஎந்த பெண்ணையும் பார்க்கவே பிடிக்கவில்லை..‌."
+  },
+  {
+    title: "உலறல்",
+    poem: "உதறிச் சென்றவளுக்காக\nஉலறிக் கொண்டே இருக்கிறேன்..."
+  },
+  {
+    title: "கண்ணீர்",
+    poem: "அவள் பிரிந்து சென்றதை புரிந்து கொள்ளாத வரை,\nகவலையாகத்தான் இருக்கும்,\nபுரிந்து கொண்டால் கண்ணீராக மாறிவிடும்...."
+  },
+  {
+    title: "பிடிவாதம்",
+    poem: "அவளை மட்டும் பிடித்து போனதால் தான்\nஇன்று வரை பிடிவாதமாகவே இருக்கின்றேன்..."
+  },
+  {
+    title: "கவிதை",
+    poem: "என்னுடைய சிறந்த கவிதை எதுவென்றால்\nஅது என் இறந்து போன காதல் தான்...."
+  },
+  {
+    title: "கானல்",
+    poem: "காதல் அவள் என்னை கண்டு கொள்ளாமல் போனாலும்\nஒருநாளும் அவளை காணாமல் போனதில்லை நானும்..."
+  }
+];
+
+// homepage list
+const list = document.getElementById("kavithai-list");
+kavithaigal.forEach((k, i) => {
+  const li = document.createElement("li");
+  li.innerText = k.title;
+  li.onclick = () => {
+    localStorage.setItem("selectedKavithai", JSON.stringify(k));
+    window.location.href = "kavithai.html";
+  };
+  list.appendChild(li);
+});
+</script>
+  
 
   const homePage = document.getElementById("home");
   const kavithaiPage = document.getElementById("kavithai-page");
