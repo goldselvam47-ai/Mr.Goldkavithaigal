@@ -16,12 +16,12 @@ body{
 }
 header{
   text-align:center;
-  padding:35px 20px;
+  padding:30px;
   border-bottom:1px solid #c7b08b;
 }
 .author{
-  font-style:italic;
   cursor:pointer;
+  font-style:italic;
   color:#6b4e2e;
 }
 .insta a{
@@ -36,28 +36,26 @@ header{
 }
 .page.active{display:block;}
 .about-box{
-  background:rgba(255,255,255,0.75);
+  background:rgba(255,255,255,0.85);
   padding:30px;
   line-height:2;
   border-left:5px solid #8b6b3f;
-  margin-bottom:35px;
+  margin-bottom:30px;
 }
 button{
-  padding:10px 30px;
   background:#8b6b3f;
   color:#fff;
   border:none;
+  padding:10px 25px;
   cursor:pointer;
-  font-family:inherit;
 }
-.center{text-align:center;}
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
   gap:20px;
 }
 .box{
-  background:rgba(255,255,255,0.85);
+  background:#fff;
   padding:20px;
   text-align:center;
   cursor:pointer;
@@ -69,36 +67,29 @@ pre{
   line-height:1.9;
 }
 .actions{
-  margin-top:25px;
   display:flex;
-  gap:30px;
-  font-size:20px;
+  gap:25px;
+  margin-top:20px;
 }
-.actions i{cursor:pointer;color:#6b4e2e;}
-.comment-box{margin-top:30px;}
+.actions i{cursor:pointer;}
 .comment-box textarea{
   width:100%;
   height:80px;
   font-family:inherit;
-  padding:10px;
 }
 .comment{
   background:#fff;
-  margin-top:10px;
   padding:10px;
+  margin-top:10px;
   border-left:3px solid #8b6b3f;
 }
 .back{
-  margin-top:40px;
+  margin-top:30px;
   cursor:pointer;
   color:#6b4e2e;
   text-align:center;
 }
-.count{
-  font-size:14px;
-  opacity:0.8;
-  margin-left:5px;
-}
+.count{font-size:14px;}
 </style>
 </head>
 
@@ -106,99 +97,30 @@ pre{
 
 <header>
   <h1>Mr.Gold Kavithaigal</h1>
-  <div class="author" onclick="openAuthor()">— தங்க செல்வம்</div>
-  <div class="insta">
-    <a href="https://www.instagram.com/thangaselvam_16" target="_blank">
-      <i class="fa-brands fa-instagram"></i> @mr_gold_kavithaigal
-    </a>
-  </div>
+  <div class="author">— தங்க செல்வம்</div>
 </header>
 
-<!-- HOME -->
 <div id="home" class="page active">
   <div class="about-box">
     <b>About :</b><br><br>
-    Mr.Gold Kavithaigal என்பது எழுதப்பட்ட கவிதைகளின் தொகுப்பு அல்ல.  
-    அது வாழ்ந்து கடந்து வந்த நினைவுகளின் சாட்சியம்.  
-    சொல்ல முடியாத உணர்வுகள், வெளியில் தெரியாத வலிகள்,  
-    அமைதியாக அழுத இரவுகள் —  
-    இவை அனைத்தும் இங்கே கவிதைகளாக பேசுகின்றன.
-    <br><br>
-    இந்த வரிகள் யாரையும் கவர எழுதப்படவில்லை.  
-    தன்னைப் போலவே யாராவது ஒருவர்  
-    இந்த வரிகளில் தன்னை கண்டுகொண்டால் போதும்.
-    <br><br>
+    Mr.Gold Kavithaigal என்பது உணர்வுகளின் வெளிப்பாடு.
+    மனம் பேசாததை வார்த்தைகள் பேசும் ஒரு சிறிய உலகம்.
     <div style="text-align:right;font-style:italic;">— Mr.Gold</div>
   </div>
-
-  <div class="center">
-    <button onclick="openTitles()">கவிதை பட்டியல்</button>
+  <div style="text-align:center;">
+    <button onclick="show('titles')">கவிதை பட்டியல்</button>
   </div>
 </div>
 
-<!-- AUTHOR -->
-<div id="author" class="page">
-
-  <!-- SITE MEANING -->
-  <div class="about-box">
-    <b>Mr.Gold Kavithaigal :</b><br><br>
-    “Mr.Gold Kavithaigal” என்பது ஒரு இணையதளம் மட்டும் அல்ல.  
-    இது ஒரு மனநிலையின் வெளிப்பாடு.  
-    சொல்ல முடியாமல் உள்ளுக்குள் தங்கிய உணர்வுகள்  
-    வார்த்தைகளாக வெளியே வர ஒரு சிறிய முயற்சி.
-    <br><br>
-    எல்லா கவிதைகளும் அமைதியான நேரத்தில் எழுதப்படுவதில்லை.  
-    சில கவிதைகள் மனம் உடைந்த பிறகே பிறக்கின்றன.  
-    சில வரிகள் இரவின் மௌனத்தில்  
-    தூங்க விடாமல் கேட்ட கேள்விகளின் பதில்கள்.
-    <br><br>
-    இது புகழுக்கான பயணம் அல்ல.  
-    மனம் கனமாக இருக்கும் ஒருவருக்கு  
-    ஒரு கவிதை சற்று ஆறுதலாக இருந்தால்,  
-    அதுவே இந்த தளத்தின் உண்மையான நோக்கம்.
-    <br><br>
-    <div style="text-align:right;font-style:italic;">— Mr.Gold</div>
-  </div>
-
-  <!-- AUTHOR JOURNEY -->
-  <div class="about-box">
-    <b>எழுத்தாளர் பற்றி :</b><br><br>
-    என் பெயர் தங்க செல்வம்.  
-    எழுத வேண்டும் என்று ஒருநாள் முடிவு செய்து  
-    எழுத ஆரம்பித்தவன் அல்ல நான்.  
-    சொல்ல முடியாத உணர்வுகள்  
-    தானாகவே வார்த்தைகளாக மாறிய நேரங்களில்  
-    எழுத ஆரம்பித்தேன்.
-    <br><br>
-    காதல், பிரிவு, மௌனம், நினைவுகள் —  
-    இவை எல்லாம் என் வாழ்க்கையில்  
-    கடந்து வந்த உண்மைகள்.  
-    அதனால் தான் என் கவிதைகள்  
-    கற்பனைக்கானவை அல்ல,  
-    அனுபவங்களின் பிரதிபலிப்பு.
-    <br><br>
-    நான் ஒரு பெரிய கவிஞன் என்று  
-    என்னை நான் நினைத்ததில்லை.  
-    ஆனால் உண்மையாக எழுத முயன்றிருக்கிறேன்.  
-    அந்த உண்மை ஒருவருக்காவது  
-    ஆறுதலாக இருந்தால்  
-    அதுவே எனக்கு போதும்.
-  </div>
-
-  <div class="back" onclick="goHome()">← முகப்பு</div>
-</div>
-
-<!-- TITLES -->
 <div id="titles" class="page">
   <h2>கவிதை பட்டியல்</h2>
   <div class="grid" id="list"></div>
-  <div class="back" onclick="goHome()">← முகப்பு</div>
+  <div class="back" onclick="show('home')">← முகப்பு</div>
 </div>
 
-<!-- POEM -->
 <div id="poem" class="page">
-  <h2 id="pTitle"></h2>
-  <pre id="pBody"></pre>
+  <h2 id="poemTitle"></h2>
+  <pre id="poemBody"></pre>
 
   <div class="actions">
     <div onclick="likePoem()">
@@ -209,92 +131,130 @@ pre{
       <i class="fa-regular fa-comment"></i>
       <span class="count" id="commentCount">0</span>
     </div>
-    <div onclick="sharePoem()">
-      <i class="fa-solid fa-share-nodes"></i>
-    </div>
   </div>
 
   <div class="comment-box">
     <textarea id="commentInput" placeholder="உங்கள் கருத்தை எழுதுங்கள்..."></textarea><br><br>
-    <button onclick="addComment()">Comment</button>
+    <button onclick="addComment()">Add</button>
     <div id="comments"></div>
   </div>
 
-  <div class="back" onclick="openTitles()">← கவிதை பட்டியல்</div>
+  <div class="back" onclick="show('titles')">← கவிதை பட்டியல்</div>
 </div>
 
 <script>
 const poems=[
+
+// --- Original + Your Poems + 30 Created Poems Combined ---
+
 {t:"கனவு",p:"என் வாழ்வில் கனவாக வந்தவள்\nஇன்று நினைவாக வாழ்கிறாள்..."},
 {t:"அவள்",p:"அவளை பார்த்து பிடித்து போன பின்பு\nஎந்த பெண்ணையும் பார்க்கவே பிடிக்கவில்லை.."},
 {t:"உலறல்",p:"உதறிச் சென்றவளுக்காக\nஉலறிக் கொண்டே இருக்கிறேன்..."},
-{t:"கண்ணீர்",p:"அவள் பிரிந்து சென்றதை புரிந்து கொள்ளாத வரை,\nகவலையாகத்தான் இருக்கும்,\nபுரிந்து கொண்டால் கண்ணீராக மாறிவிடும்...."},
-{t:"பிடிவாதம்",p:"அவளை மட்டும் பிடித்து போனதால் தான்\nஇன்று வரை பிடிவாதமாகவே இருக்கின்றேன்..."},
-{t:"கவிதை",p:"என்னுடைய சிறந்த கவிதை எதுவென்றால்\nஅது என் இறந்து போன காதல் தான்...."},
-{t:"கானல்",p:"காதல் அவள் என்னை கண்டு கொள்ளாமல் போனாலும்\nஒருநாளும் அவளை காணாமல் போனதில்லை நானும்..."},
-{t:"புள்ளி",p:"ஒவ்வொரு முற்றுப்புள்ளியிலும்,\nதொடர்கிறது மற்றொரு கதை..."},
-{t:"பேசாமலே",p:"ரொம்ப நாளா பேசிட்டு இருந்தவங்க,\nகொஞ்ச நாளா பேசாமலே இருக்காங்க,\nஇதுக்கு முன்னாடியே பேசாமலே இருந்திருக்கலாமே..."},
+{t:"கண்ணீர்",p:"அவள் பிரிந்து சென்றதை புரிந்து கொள்ளாத வரை,\nகவலையாகத்தான் இருக்கும்..."},
+{t:"புள்ளி",p:"ஒவ்வொரு முற்றுப்புள்ளியிலும்\nதொடர்கிறது மற்றொரு கதை..."},
+{t:"உரிமை",p:"அவள் மீது கொண்ட காதலை\nஎன்னை தவிர வேறு யாராலும் முடியாது..."},
 {t:"அழைப்பு",p:"அழைக்காமலே வந்தவர்கள்\nஇப்போது அழைத்தாலும் வர மறுக்கிறார்கள்..."},
-{t:"காயம்",p:"ஒரு சிலரின் பேச்சால் காயப்பட்ட நான்\nயாரையும் காயப்படுத்தாமல் இருக்க\nமௌனமாய் இருக்கிறேன்..."},
-{t:"புரிதல்",p:"எனக்கு பிடிச்ச எல்லோருக்குமே\nஎன்ன பிடிக்கலனு அவங்க போனதுக்கு அப்புறம்தா புரிஞ்சுது..."},
-{t:"தேவதை",p:"படுப்பதற்காக தேவதை என்றவன்,\nபடுத்து விட்டு தேவுடியா என்றான்..."},
-{t:"உரிமை",p:"அவள் மீது உரிமை கொள்ள தான் என்னால் முடியாது\nஅவள் மீது கொண்ட காதலை உரிமை கொள்ள\nஎன்னை தவிர வேறு யாராலும் முடியாது..."}
+{t:"கண்கள்",p:"கண்களினிடம் அனுமதி வாங்கி,\nகாதலும் வந்திருந்தால் காதலித்திருக்குமே இதயம்..."},
+{t:"மல்லிகை",p:"மல்லிகையும் வாட மறுக்குமே\nஉன் கூந்தலில் குடியேறிய பின்னே...."},
+{t:"நினைவுகள்",p:"மரணம் ஒரு‌நொடி‌யில்,\nநினைவுகள் ஒவ்வொரு நொடியிலும் மரணம்..."},
+{t:"காதலி",p:"என் காதலிக்கு\nநான் தந்த சாபம்\nவாழ்ந்து போ என்று..."},
+{t:"கொஞ்சல்",p:"அவளோடு நான் கொஞ்சி பேசிய நாட்களை விட\nபேச சொல்லி கெஞ்சிய நாட்களே அதிகம்..."},
+{t:"விருப்பம்",p:"கண்டதை விரும்பிய இதயம்,\nஉன்னை கண்டபின் வேரெதையும் விரும்பாமல் இருக்கிறது..."},
+{t:"தண்டனை",p:"சிரிப்பால் சிறை வைத்த அவள் தான்...\nகாதலித்து மரணதண்டனை கொடுத்தாள்..."},
+{t:"பூட்டு",p:"தொலைந்த சாவிக்கு தெரியாது\nஉடைய போவது பூட்டு என்று..."},
+{t:"அழுகை",p:"இப்போதெல்லாம் அழுவதில்லை,\nஅழுதால் மட்டும் என்னவாகிவிடபோகிறது என்பதால் தான்..."},
+{t:"பிரிவு",p:"என்னை புரிந்து கொண்டவள் அவள் தான்,\nஇருந்தாலும் பிரிந்து சென்று விட்டாள்..."},
+{t:"தவிப்பு",p:"பேச தவிக்கும் நானும்,\nபேச தவிர்க்கும் அவளும்..."},
+{t:"கடன்",p:"கடன் அன்பை முறிக்கும் என்பதை\nநண்பனிடம் வாங்கும் போது தான் புரிந்து கொண்டேன்..."},
+
+// 30 New Ones
+{t:"மௌனம்",p:"பேசாமல் இருந்த அவளின் மௌனம் தான்\nஎன்னை அதிகமாக காயப்படுத்தியது..."},
+{t:"தொலைவு",p:"தொலைவில் இருந்தாலும் பரவாயில்லை,\nஇதயத்தில் இருந்து தொலைந்து போகாதே..."},
+{t:"நிழல்",p:"என்னை விட்டு சென்றாலும்\nஎன் நினைவில் நிழலாக நிற்கிறாய்..."},
+{t:"மறதி",p:"மறக்க முயற்சிக்கும் ஒவ்வொரு நாளும்\nநினைவு இன்னும் தீவிரமாகிறது..."},
+{t:"வலி",p:"வலியை வெளியில் காட்டவில்லை,\nஆனால் உள்ளே ஒவ்வொரு நாளும் சிதறுகிறேன்..."},
+{t:"நம்பிக்கை",p:"ஒருநாள் திரும்பி வருவாய் என்ற\nநம்பிக்கையோடு தான் இன்னும் காத்திருக்கிறேன்..."},
+{t:"தவறு",p:"காதலித்தது தவறா?\nஅல்லது உன்னை நம்பியது தவறா?..."},
+{t:"நேரம்",p:"நேரம் எல்லாவற்றையும் சரி செய்கிறது என்பார்கள்,\nஆனால் நினைவுகளை மட்டும் விடாமல் பிடித்திருக்கிறது..."},
+{t:"உண்மை",p:"நான் உன்னை உண்மையாக காதலித்தேன்,\nஅதுதான் என் பெரிய தவறு..."},
+{t:"பயம்",p:"மீண்டும் காதலிக்க பயமில்லை,\nமீண்டும் உடைந்து போக தான் பயம்..."},
+{t:"ஆறுதல்",p:"ஆறுதல் சொல்ல யாரும் இல்லாத இரவுகளில்\nஎன் கண்ணீர் தான் தோழன்..."},
+{t:"சிரிப்பு",p:"வெளியில் சிரித்தாலும்,\nஉள்ளே அழுகை தான் நிறைந்திருக்கிறது..."},
+{t:"ஏக்கம்",p:"ஒரு மெசேஜ் வருமா என்று\nஒவ்வொரு நொடியும் திரையை பார்த்துக் கொண்டிருக்கிறேன்..."},
+{t:"பழக்கம்",p:"உன்னோடு பேசுவது ஒரு பழக்கம்,\nஇப்போது அந்த பழக்கம் இல்லாததே வலி..."},
+{t:"பாதை",p:"ஒரே பாதையில் நடந்தோம்,\nஆனால் இலக்கு மட்டும் வேறுபட்டது..."},
+{t:"காயம்",p:"காயம் ஆறலாம்,\nஆனால் காரணமானவர் மறக்க முடியாது..."},
+{t:"சந்திப்பு",p:"அந்த முதல் சந்திப்பு தான்\nஎன் வாழ்க்கையின் திருப்புமுனை..."},
+{t:"விதி",p:"நாம் சேர முடியவில்லை என்றால்\nஅது காதல் குறை இல்லை,\nவிதி குறை..."},
+{t:"காத்திருப்பு",p:"காத்திருப்பதற்கு ஒரு எல்லை இருக்கும்,\nஆனால் என் காதலுக்கு இல்லை..."},
+{t:"மாற்றம்",p:"மாறியது நீயா?\nஅல்லது உண்மை தெரிந்தது நானா?..."},
+{t:"இரவு",p:"இரவு வந்தால் நினைவுகள் அதிகம்,\nஅதனால்தான் தூக்கம் குறைவு..."},
+{t:"இதயம்",p:"உன்னை விட்டுப் போக சொல்லி\nஇதயத்திடம் சொன்னேன்,\nஅது கேட்கவே இல்லை..."},
+{t:"கடைசி",p:"நம்முடைய கடைசி உரையாடல் தான்\nஎன் மனதில் இன்னும் ஒலிக்கிறது..."},
+{t:"பாசம்",p:"பாசம் அதிகமாக இருந்ததால் தான்\nபிரிவு இன்னும் அதிகமாக வலிக்கிறது..."},
+{t:"சுமை",p:"உன் நினைவுகளை சுமந்து\nஒவ்வொரு நாளும் வாழ்கிறேன்..."},
+{t:"உறவு",p:"உறவு முறிந்தாலும்,\nஅதன் சுவடு இதயத்தில் நிற்கிறது..."},
+{t:"கனவுகள்",p:"உன்னோடு கட்டிய கனவுகள்\nஇப்போது தனியாக சிதறிக்கிடக்கின்றன..."},
+{t:"சுவாசம்",p:"உன்னை நினைக்காமல் இருக்க முயன்றேன்,\nஆனால் அது சுவாசம் நிறுத்துவது போல இருந்தது..."},
+{t:"புரிதல்",p:"என்னை புரிந்துகொள்ளாதவள் தான்\nஎன்னை அதிகமாக பாதித்தாள்..."},
+{t:"அழுத்தம்",p:"மனம் உடைந்த பிறகு தான் தெரிகிறது,\nகாதல் எவ்வளவு அழுத்தம் கொடுக்கிறது என்று..."}
 ];
 
-const pages={home,author,titles,poem};
-let current="";
+let currentIndex=0;
+const pages={home,titles,poem};
 
 function show(p){
   Object.values(pages).forEach(x=>x.classList.remove("active"));
   pages[p].classList.add("active");
 }
-function goHome(){show("home")}
-function openAuthor(){show("author")}
-function openTitles(){show("titles")}
 
-poems.forEach(k=>{
+poems.forEach((poem,index)=>{
   const d=document.createElement("div");
   d.className="box";
-  d.innerText=k.t;
+  d.innerText=poem.t;
   d.onclick=()=>{
-    current=k.t;
-    pTitle.innerText=k.t;
-    pBody.innerText=k.p;
-    loadLikes(); loadComments();
+    currentIndex=index;
+    poemTitle.innerText=poem.t;
+    poemBody.innerText=poem.p;
+    loadLikes();
+    loadComments();
     show("poem");
   };
   list.appendChild(d);
 });
 
 function likePoem(){
-  let c=localStorage.getItem("like_"+current)||0;
-  c++; localStorage.setItem("like_"+current,c);
+  let key="like_"+currentIndex;
+  let c=localStorage.getItem(key)||0;
+  c++;
+  localStorage.setItem(key,c);
   likeCount.innerText=c;
 }
 function loadLikes(){
-  likeCount.innerText=localStorage.getItem("like_"+current)||0;
+  likeCount.innerText=localStorage.getItem("like_"+currentIndex)||0;
 }
 function addComment(){
-  if(!commentInput.value.trim())return;
-  const a=JSON.parse(localStorage.getItem("com_"+current)||"[]");
-  a.push(commentInput.value);
-  localStorage.setItem("com_"+current,JSON.stringify(a));
-  commentInput.value=""; loadComments();
+  if(!commentInput.value.trim()) return;
+  let key="com_"+currentIndex;
+  let arr=JSON.parse(localStorage.getItem(key)||"[]");
+  arr.push(commentInput.value);
+  localStorage.setItem(key,JSON.stringify(arr));
+  commentInput.value="";
+  loadComments();
 }
 function loadComments(){
   comments.innerHTML="";
-  const a=JSON.parse(localStorage.getItem("com_"+current)||"[]");
-  commentCount.innerText=a.length;
-  a.forEach(t=>{
-    const d=document.createElement("div");
-    d.className="comment"; d.innerText=t;
+  let key="com_"+currentIndex;
+  let arr=JSON.parse(localStorage.getItem(key)||"[]");
+  commentCount.innerText=arr.length;
+  arr.forEach(c=>{
+    let d=document.createElement("div");
+    d.className="comment";
+    d.innerText=c;
     comments.appendChild(d);
   });
 }
-function focusComment(){commentInput.focus()}
-function sharePoem(){
-  window.open("https://wa.me/?text="+encodeURIComponent(pTitle.innerText));
-}
+function focusComment(){commentInput.focus();}
 </script>
 
 </body>
