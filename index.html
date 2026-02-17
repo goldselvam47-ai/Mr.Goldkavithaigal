@@ -35,7 +35,7 @@ margin:5px 0;
 
 nav{
 text-align:center;
-margin:15px 0;
+margin:20px 0;
 }
 
 nav button{
@@ -53,26 +53,40 @@ display:block;
 }
 
 button{
-padding:8px 18px;
+display:block;
+width:90%;
+max-width:500px;
+margin:10px auto;
+padding:12px;
 border:none;
-border-radius:20px;
-background:gold;
-color:black;
-font-weight:bold;
+border-radius:8px;
+background:#1a1a1a;
+color:gold;
+font-size:16px;
 cursor:pointer;
-margin:6px;
 transition:0.3s;
+text-align:left;
 }
 
 button:hover{
-background:white;
+background:gold;
+color:black;
+}
+
+.nav-btn{
+display:inline-block;
+width:auto;
+background:gold;
+color:black;
+border-radius:20px;
+padding:8px 18px;
 }
 
 .poem-box{
 background:#1a1a1a;
 margin:20px auto;
 padding:25px;
-width:85%;
+width:90%;
 max-width:600px;
 border-radius:15px;
 box-shadow:0 0 20px rgba(255,215,0,0.3);
@@ -80,7 +94,7 @@ box-shadow:0 0 20px rgba(255,215,0,0.3);
 
 footer{
 text-align:center;
-padding:20px;
+padding:25px;
 background:black;
 margin-top:40px;
 }
@@ -88,7 +102,12 @@ margin-top:40px;
 footer a{
 color:gold;
 text-decoration:none;
-font-weight:bold;
+display:block;
+margin:5px 0;
+}
+
+footer a:hover{
+color:white;
 }
 </style>
 </head>
@@ -101,31 +120,16 @@ font-weight:bold;
 </header>
 
 <nav>
-<button onclick="goHome()">Home</button>
-<button onclick="showAbout()">About Website</button>
-<button onclick="showAuthor()">About Author</button>
+<button class="nav-btn" onclick="goHome()">Home</button>
+<button class="nav-btn" onclick="showAbout()">About Website</button>
+<button class="nav-btn" onclick="showAuthor()">About Author</button>
 </nav>
 
 <!-- HOME -->
 <div id="home" class="section active">
 <h2>📜 Kavithai Pattiyal</h2>
 
-<button onclick="showPoem(0)">காதலி</button>
-<button onclick="showPoem(1)">கொஞ்சல்</button>
-<button onclick="showPoem(2)">விருப்பம்</button>
-<button onclick="showPoem(3)">காதலி (2)</button>
-<button onclick="showPoem(4)">தண்டனை</button>
-<button onclick="showPoem(5)">பூட்டு</button>
-<button onclick="showPoem(6)">அழுகை</button>
-<button onclick="showPoem(7)">பிரிவு</button>
-<button onclick="showPoem(8)">தவிப்பு</button>
-<button onclick="showPoem(9)">அவள்</button>
-<button onclick="showPoem(10)">கடன்</button>
-<button onclick="showPoem(11)">அழைப்பு</button>
-<button onclick="showPoem(12)">கண்கள்</button>
-<button onclick="showPoem(13)">மல்லிகை</button>
-<button onclick="showPoem(14)">நினைவுகள்</button>
-<button onclick="showPoem(15)">கண்ணீர்</button>
+<div id="poemList"></div>
 
 </div>
 
@@ -133,30 +137,89 @@ font-weight:bold;
 <div id="poemPage" class="section">
 <h2 id="poemTitle"></h2>
 <div id="poemContent" class="poem-box"></div>
-<button onclick="goHome()">⬅ Back</button>
+<button class="nav-btn" onclick="goHome()">⬅ Back</button>
 </div>
 
 <!-- ABOUT WEBSITE -->
 <div id="about" class="section">
 <h2>About Mr.Gold Kavithaigal</h2>
-<p>உணர்வுகளை பொற்கவிதைகளாக மாற்றும் ஒரு மன உலகம் இது.</p>
-<button onclick="goHome()">⬅ Back</button>
+
+<p>
+“Mr.Gold Kavithaigal” என்பது உணர்வுகளை பொற்கவிதைகளாக மாற்றும் ஒரு டிஜிட்டல் உலகம்.
+</p>
+
+<p>
+இங்கு காதல், வலி, பிரிவு, நினைவுகள், வாழ்க்கை அனுபவங்கள் அனைத்தும்  
+மனதில் இருந்து நேராக வார்த்தைகளாக பிறக்கின்றன.
+</p>
+
+<p>
+சொல்ல முடியாததை கவிதை சொல்ல வேண்டும்,  
+புரிய வைக்க முடியாததை உணர்வு புரிய வைக்க வேண்டும் —  
+அந்த நோக்கத்தில் இந்த தளம் உருவாக்கப்பட்டது.
+</p>
+
+<p>
+ஒவ்வொரு கவிதையும் ஒரு உண்மையான அனுபவத்தின் பிரதிபலிப்பு.  
+வாசகர்கள் மனதை தொட்டால் அதுவே இந்த தளத்தின் வெற்றி.
+</p>
+
+<button class="nav-btn" onclick="goHome()">⬅ Back</button>
 </div>
 
 <!-- ABOUT AUTHOR -->
 <div id="author" class="section">
-<h2>About The Author</h2>
-<p>Thangaselvam — “Mr.Gold” என்பது ஒரு பெயர் அல்ல, அது ஒரு உணர்வு.</p>
-<button onclick="goHome()">⬅ Back</button>
+<h2>✨ About The Author ✨</h2>
+
+<p>
+நான் Thangaselvam.  
+“Mr.Gold” என்பது ஒரு பெயர் அல்ல — அது என் உணர்வுகளின் அடையாளம்.
+</p>
+
+<p>
+வாழ்க்கையில் சந்தித்த சில தருணங்கள்  
+என்னை அமைதியாக்கின.  
+ஆனால் அந்த அமைதிக்குள் ஆயிரம் வார்த்தைகள் இருந்தது.
+</p>
+
+<p>
+பேச முடியாததை எழுத ஆரம்பித்தேன்.  
+எழுத ஆரம்பித்தது ஒரு பழக்கமாக மாறியது.  
+அந்த பழக்கம் இன்று ஒரு அடையாளமாக மாறியுள்ளது.
+</p>
+
+<p>
+காதல் இருந்தது.  
+வலி இருந்தது.  
+பிரிவு இருந்தது.  
+ஆனால் அந்த எல்லா உணர்வுகளையும் தங்கம் போல மாற்றியது — எழுத்து.
+</p>
+
+<p>
+என் வரிகள் உங்க மனசை தொட்டால்,  
+அதுவே என் பயணத்தின் வெற்றி.
+</p>
+
+<p>
+இந்த பயணம் இன்னும் தொடர்கிறது…  
+இன்னும் பல பொற்கவிதைகள் பிறக்க இருக்கின்றன.
+</p>
+
+<button class="nav-btn" onclick="goHome()">⬅ Back</button>
 </div>
 
 <footer>
-<p>
+
+<a href="https://www.instagram.com/thangaselvam_16?igsh=N3JlYzV5ZHRjdm03" target="_blank">
+<i class="fa-brands fa-instagram"></i> @thangaselvam_16
+</a>
+
 <a href="https://instagram.com/mrgold_kavithaigal" target="_blank">
 <i class="fa-brands fa-instagram"></i> @mrgold_kavithaigal
 </a>
-</p>
+
 <p>© 2026 Mr.Gold Kavithaigal</p>
+
 </footer>
 
 <script>
@@ -180,6 +243,16 @@ const poems = [
 {title:"கண்ணீர்", text:"வரண்டு போன கண்களுக்கு\nநீர் நிரப்ப வந்து சென்றவள் அவள்..."}
 ];
 
+function loadPoems(){
+const list=document.getElementById("poemList");
+poems.forEach((poem,index)=>{
+const btn=document.createElement("button");
+btn.innerText=poem.title;
+btn.onclick=function(){showPoem(index)};
+list.appendChild(btn);
+});
+}
+
 function hideAll(){
 document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
 }
@@ -202,10 +275,11 @@ document.getElementById('author').classList.add('active');
 function showPoem(index){
 hideAll();
 document.getElementById('poemPage').classList.add('active');
-
-document.getElementById("poemTitle").innerText = poems[index].title;
-document.getElementById("poemContent").innerHTML = poems[index].text.replace(/\n/g,"<br>");
+document.getElementById("poemTitle").innerText=poems[index].title;
+document.getElementById("poemContent").innerHTML=poems[index].text.replace(/\n/g,"<br>");
 }
+
+loadPoems();
 
 </script>
 
