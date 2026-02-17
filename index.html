@@ -5,21 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mr.Gold Kavithaigal</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <style>
 body{
 margin:0;
-font-family:'Noto Serif Tamil', serif;
+font-family:'Noto Serif Tamil',serif;
 background:#0f0f0f;
 color:white;
+transition:0.5s;
+overflow-x:hidden;
+}
+
+.light-mode{
+background:#f4f4f4;
+color:#111;
 }
 
 header{
 text-align:center;
-padding:40px 20px;
+padding:30px;
 background:black;
+animation:fadeIn 1.5s ease;
 }
 
 header h1{
@@ -29,72 +38,103 @@ cursor:pointer;
 }
 
 header h3{
-color:#ccc;
 margin:5px 0;
+color:#ccc;
 }
 
 nav{
 text-align:center;
-margin:20px 0;
+margin:15px 0;
 }
 
-nav button{
+.nav-btn{
+background:gold;
+color:black;
+border:none;
+padding:8px 18px;
+border-radius:20px;
+cursor:pointer;
 margin:5px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.nav-btn:hover{
+transform:scale(1.05);
 }
 
 .section{
 display:none;
-padding:40px 20px;
+padding:30px 15px;
 text-align:center;
+animation:fadeIn 0.8s ease;
 }
 
-.active{
-display:block;
+.active{display:block;}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(10px);}
+to{opacity:1;transform:translateY(0);}
 }
 
-button{
+#searchInput{
+width:90%;
+max-width:400px;
+padding:10px;
+border-radius:20px;
+border:none;
+margin-bottom:15px;
+}
+
+.poem-btn{
 display:block;
 width:90%;
 max-width:500px;
-margin:10px auto;
+margin:8px auto;
 padding:12px;
-border:none;
-border-radius:8px;
 background:#1a1a1a;
 color:gold;
-font-size:16px;
+border:none;
+border-radius:8px;
+text-align:left;
 cursor:pointer;
 transition:0.3s;
-text-align:left;
 }
 
-button:hover{
+.poem-btn:hover{
 background:gold;
 color:black;
-}
-
-.nav-btn{
-display:inline-block;
-width:auto;
-background:gold;
-color:black;
-border-radius:20px;
-padding:8px 18px;
 }
 
 .poem-box{
 background:#1a1a1a;
 margin:20px auto;
-padding:25px;
+padding:30px;
 width:90%;
 max-width:600px;
 border-radius:15px;
-box-shadow:0 0 20px rgba(255,215,0,0.3);
+box-shadow:0 0 25px rgba(255,215,0,0.4);
+}
+
+.signature{
+margin-top:20px;
+color:gold;
+font-style:italic;
+}
+
+.like-btn{
+background:gold;
+border:none;
+padding:6px 14px;
+border-radius:20px;
+cursor:pointer;
+margin-top:15px;
+font-weight:bold;
 }
 
 footer{
 text-align:center;
-padding:25px;
+padding:20px;
 background:black;
 margin-top:40px;
 }
@@ -102,12 +142,59 @@ margin-top:40px;
 footer a{
 color:gold;
 text-decoration:none;
-display:block;
-margin:5px 0;
 }
 
-footer a:hover{
+.floating-insta{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#E1306C;
 color:white;
+padding:14px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 0 15px rgba(0,0,0,0.5);
+}
+
+#shareCard{
+position:absolute;
+left:-9999px;
+width:1080px;
+height:1080px;
+padding:120px;
+box-sizing:border-box;
+background:linear-gradient(145deg,#111,#222);
+border:20px solid gold;
+display:flex;
+flex-direction:column;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+#shareCard h2{
+color:gold;
+font-size:60px;
+margin-bottom:40px;
+}
+
+#shareCard p{
+font-size:42px;
+line-height:1.6;
+white-space:pre-line;
+}
+
+.watermark{
+margin-top:60px;
+font-size:30px;
+color:gold;
+}
+
+.visitor{
+margin-top:10px;
+font-size:14px;
+color:#aaa;
 }
 </style>
 </head>
@@ -115,168 +202,143 @@ color:white;
 <body>
 
 <header>
-<h1 onclick="showAuthor()">✨ Mr.Gold Kavithaigal ✨</h1>
+<h1 onclick="goHome()">✨ Mr.Gold Kavithaigal ✨</h1>
 <h3>By Thangaselvam</h3>
+<div class="visitor">👀 Visitors: <span id="visitorCount"></span></div>
 </header>
 
 <nav>
 <button class="nav-btn" onclick="goHome()">Home</button>
-<button class="nav-btn" onclick="showAbout()">About Website</button>
 <button class="nav-btn" onclick="showAuthor()">About Author</button>
+<button class="nav-btn" onclick="toggleMode()">🌙/☀</button>
 </nav>
 
-<!-- HOME -->
 <div id="home" class="section active">
 <h2>📜 Kavithai Pattiyal</h2>
-
+<input type="text" id="searchInput" placeholder="Search Kavithai..." onkeyup="searchPoems()">
 <div id="poemList"></div>
-
 </div>
 
-<!-- POEM PAGE -->
 <div id="poemPage" class="section">
 <h2 id="poemTitle"></h2>
-<div id="poemContent" class="poem-box"></div>
+<div class="poem-box">
+<div id="poemContent"></div>
+<div class="signature">— Mr.Gold ✍️</div>
+</div>
+
+<button class="like-btn" onclick="likePoem()">❤️ Like (<span id="likeCount">0</span>)</button>
+<br><br>
+<button class="nav-btn" onclick="sharePoemImage()">📸 Download Image</button>
+<button class="nav-btn" onclick="copyCaption()">📋 Copy Caption</button>
+<br><br>
 <button class="nav-btn" onclick="goHome()">⬅ Back</button>
 </div>
 
-<!-- ABOUT WEBSITE -->
-<div id="about" class="section">
-<h2>About Mr.Gold Kavithaigal</h2>
-
-<p>
-“Mr.Gold Kavithaigal” என்பது உணர்வுகளை வெளிப்படுத்தும் ஒரு தளம்.
-</p>
-
-<p>
-இங்கு காதல், வலி, பிரிவு, நினைவுகள், வாழ்க்கை அனுபவங்கள் அனைத்தும்  
-மனதில் இருந்து நேராக வார்த்தைகளாக பிறக்கின்றன.
-</p>
-
-<p>
-சொல்ல முடியாததை கவிதை சொல்ல வேண்டும்,  
-புரிய வைக்க முடியாததை உணர்வு புரிய வைக்க வேண்டும் —  
-அந்த நோக்கத்தில் இந்த தளம் உருவாக்கப்பட்டது.
-</p>
-
-<p>
-ஒவ்வொரு கவிதையும் ஒரு உண்மையான அனுபவத்தின் பிரதிபலிப்பு.  
-வாசகர்கள் மனதை தொட்டால் அதுவே இந்த தளத்தின் வெற்றி.
-</p>
-
-<button class="nav-btn" onclick="goHome()">⬅ Back</button>
-</div>
-
-<!-- ABOUT AUTHOR -->
 <div id="author" class="section">
 <h2>✨ About The Author ✨</h2>
-
-<p>
-நான் Thangaselvam.  
-</p>
-
-<p>
-வாழ்க்கையில் சந்தித்த சில தருணங்கள்  
-என்னை அமைதியாக்கின.  
-ஆனால் அந்த அமைதிக்குள் ஆயிரம் வார்த்தைகள் இருந்தது.
-</p>
-
-<p>
-பேச முடியாததை எழுத ஆரம்பித்தேன்.  
-எழுத ஆரம்பித்தது ஒரு பழக்கமாக மாறியது.  
-அந்த பழக்கம் இன்று ஒரு அடையாளமாக மாறியுள்ளது.
-</p>
-
-<p>
-காதல் இருந்தது.  
-வலி இருந்தது.  
-பிரிவு இருந்தது.  
-ஆனால் அந்த எல்லா உணர்வுகளையும் தங்கம் போல மாற்றியது — எழுத்து.
-</p>
-
-<p>
-என் வரிகள் உங்க மனசை தொட்டால்,  
-அதுவே என் பயணத்தின் வெற்றி.
-</p>
-
-<p>
-இந்த பயணம் இன்னும் தொடர்கிறது…  
-இன்னும் பல பொற்கவிதைகள் பிறக்க இருக்கின்றன.
-</p>
-
+<p>நான் Thangaselvam. “Mr.Gold” என்பது ஒரு பெயர் அல்ல — அது என் உணர்வு.</p>
+<p>பேச முடியாததை எழுத ஆரம்பித்தேன். அந்த எழுத்துகள் இன்று ஒரு அடையாளம்.</p>
+<p>என் வரிகள் யாராவது ஒருவரின் மனதை தொட்டால் — அதுவே என் வெற்றி.</p>
+<p>Follow me on Instagram: @thangaselvam_16</p>
 <button class="nav-btn" onclick="goHome()">⬅ Back</button>
 </div>
 
 <footer>
-
-<a href="https://www.instagram.com/thangaselvam_16?igsh=N3JlYzV5ZHRjdm03" target="_blank">
+<a href="https://www.instagram.com/thangaselvam_16" target="_blank">
 <i class="fa-brands fa-instagram"></i> @thangaselvam_16
 </a>
-
 <p>© 2026 Mr.Gold Kavithaigal</p>
-
 </footer>
+
+<a href="https://www.instagram.com/thangaselvam_16" target="_blank" class="floating-insta">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<div id="shareCard">
+<h2 id="shareTitle"></h2>
+<p id="shareText"></p>
+<div class="watermark" id="shareWatermark"></div>
+</div>
 
 <script>
 
-const poems = [
-{title:"காதலி", text:"என் காதலிக்கு\nநான் தந்த சாபம்\nவாழ்ந்து போ என்று..."},
-{title:"கொஞ்சல்", text:"அவளோடு நான் கொஞ்சி பேசிய நாட்களை விட\nபேச சொல்லி கெஞ்சிய நாட்களே அதிகம்..."},
-{title:"விருப்பம்", text:"கண்டதை விரும்பிய இதயம்,\nஉன்னை கண்டபின் வேரெதையும் விரும்பாமல் இருக்கிறது..."},
-{title:"காதலி", text:"சிரிக்கவே தெரியாத என்னை\nகாதலித்து அழ வைத்தவள் அவள்..."},
-{title:"தண்டனை", text:"சிரிப்பால் சிறை வைத்த அவள் தான்...\nகாதலித்து மரணதண்டனை கொடுத்தாள்..."},
-{title:"பூட்டு", text:"தொலைந்த சாவிக்கு தெரியாது\nஉடைய போவது பூட்டு என்று..."},
-{title:"அழுகை", text:"இப்போதெல்லாம் அழுவதில்லை,\nஅழுதால் மட்டும் என்னவாகிவிடபோகிறது என்பதால் தான்..."},
-{title:"பிரிவு", text:"என்னை புரிந்து கொண்டவள் அவள் தான்,\nஇருந்தாலும் பிரிந்து சென்று விட்டாள்..."},
-{title:"தவிப்பு", text:"பேச தவிக்கும் நானும்,\nபேச தவிர்க்கும் அவளும்..."},
-{title:"அவள்", text:"அவளுக்கு என்னோடு பேச நேரமில்லை\nஎனக்கு அவளை விட்டால் பேச யாருமேயில்லை..."},
-{title:"கடன்", text:"கடன் அன்பை முறிக்கும் என்பதை\nநண்பனிடம் வாங்கும் போது தான் புரிந்து கொண்டேன்..."},
-{title:"அழைப்பு", text:"அழைக்காமலே வந்தவர்கள்\nஇப்போது அழைத்தாலும் வர மறுக்கிறார்கள்..."},
-{title:"கண்கள்", text:"கண்களினிடம் அனுமதி வாங்கி,\nகாதலும் வந்திருந்தால் காதலித்திருக்குமே இதயம்..."},
-{title:"மல்லிகை", text:"மல்லிகையும் வாட மறுக்குமே\nஉன் கூந்தலில் குடியேறிய பின்னே...."},
-{title:"நினைவுகள்", text:"மரணம் ஒரு நொடியல்,\nநினைவுகள் ஒவ்வொரு நொடியிலும் மரணம்..."},
-{title:"கண்ணீர்", text:"வரண்டு போன கண்களுக்கு\nநீர் நிரப்ப வந்து சென்றவள் அவள்..."}
+const poems=[
+{title:"காதலி",text:"என் காதலிக்கு\nநான் தந்த சாபம்\nவாழ்ந்து போ என்று..."},
+{title:"கொஞ்சல்",text:"அவளோடு நான் கொஞ்சி பேசிய நாட்களை விட\nபேச சொல்லி கெஞ்சிய நாட்களே அதிகம்..."},
+{title:"நினைவுகள்",text:"மரணம் ஒரு நொடியல்,\nநினைவுகள் ஒவ்வொரு நொடியிலும் மரணம்..."}
 ];
+
+let currentIndex=0;
+let likes={};
 
 function loadPoems(){
 const list=document.getElementById("poemList");
 poems.forEach((poem,index)=>{
 const btn=document.createElement("button");
+btn.className="poem-btn";
 btn.innerText=poem.title;
-btn.onclick=function(){showPoem(index)};
+btn.onclick=()=>showPoem(index);
 list.appendChild(btn);
 });
 }
 
 function hideAll(){
-document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
 }
 
-function goHome(){
-hideAll();
-document.getElementById('home').classList.add('active');
-}
-
-function showAbout(){
-hideAll();
-document.getElementById('about').classList.add('active');
-}
-
-function showAuthor(){
-hideAll();
-document.getElementById('author').classList.add('active');
-}
+function goHome(){hideAll();document.getElementById("home").classList.add("active");}
+function showAuthor(){hideAll();document.getElementById("author").classList.add("active");}
 
 function showPoem(index){
+currentIndex=index;
 hideAll();
-document.getElementById('poemPage').classList.add('active');
+document.getElementById("poemPage").classList.add("active");
 document.getElementById("poemTitle").innerText=poems[index].title;
 document.getElementById("poemContent").innerHTML=poems[index].text.replace(/\n/g,"<br>");
+document.getElementById("likeCount").innerText=likes[index]||0;
 }
+
+function likePoem(){
+likes[currentIndex]=(likes[currentIndex]||0)+1;
+document.getElementById("likeCount").innerText=likes[currentIndex];
+}
+
+function toggleMode(){document.body.classList.toggle("light-mode");}
+
+function sharePoemImage(){
+const today=new Date().toLocaleDateString("en-GB");
+document.getElementById("shareTitle").innerText=poems[currentIndex].title;
+document.getElementById("shareText").innerText=poems[currentIndex].text;
+document.getElementById("shareWatermark").innerText="@thangaselvam_16 | "+today;
+
+html2canvas(document.getElementById("shareCard"),{scale:2}).then(canvas=>{
+let link=document.createElement("a");
+link.download="MrGold_Kavithai.png";
+link.href=canvas.toDataURL();
+link.click();
+});
+}
+
+function copyCaption(){
+const text=`✨ ${poems[currentIndex].title} ✨\n\n${poems[currentIndex].text}\n\n— Mr.Gold ✍️\nFollow: @thangaselvam_16`;
+navigator.clipboard.writeText(text);
+alert("Caption Copied 🔥");
+}
+
+function searchPoems(){
+const input=document.getElementById("searchInput").value.toLowerCase();
+document.querySelectorAll(".poem-btn").forEach(btn=>{
+btn.style.display=btn.innerText.toLowerCase().includes(input)?"block":"none";
+});
+}
+
+let count=localStorage.getItem("visits")||0;
+count++;
+localStorage.setItem("visits",count);
+document.getElementById("visitorCount").innerText=count;
 
 loadPoems();
 
 </script>
-
 </body>
 </html>
