@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mr.Gold Kavithaigal</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -14,52 +14,54 @@ margin:0;
 font-family:'Noto Serif Tamil',serif;
 background:#0f0f0f;
 color:white;
-overflow-x:hidden;
+font-size:15px;
 }
-
-header{
-text-align:center;
-padding:30px;
-background:black;
-}
-
-header h1{color:gold;margin:0;}
-header h3{margin:5px 0;color:#ccc;}
 
 nav{
+background:black;
 text-align:center;
-margin:15px 0;
+padding:12px;
 }
 
 .nav-btn{
 background:gold;
 color:black;
 border:none;
-padding:8px 18px;
+padding:6px 15px;
+margin:5px;
 border-radius:20px;
 cursor:pointer;
-margin:5px;
-font-weight:bold;
+font-weight:600;
+font-size:14px;
+}
+
+header{
+text-align:center;
+padding:25px 10px;
+background:#111;
+}
+
+header h1{
+color:gold;
+margin:0;
+font-size:26px;
+}
+
+header h3{
+margin:5px 0;
+color:#ccc;
+font-weight:400;
+font-size:15px;
 }
 
 .section{
-position:absolute;
-width:100%;
-top:0;
-left:0;
+display:none;
 padding:30px 15px;
 text-align:center;
-opacity:0;
-transform:translateY(20px);
-transition:opacity 0.5s ease, transform 0.5s ease;
-pointer-events:none;
 }
 
 .section.active{
-opacity:1;
-transform:translateY(0);
-pointer-events:auto;
-position:relative;
+display:block;
 }
 
 .poem-title{
@@ -68,32 +70,30 @@ color:black;
 display:block;
 width:90%;
 max-width:500px;
-margin:10px auto;
-padding:12px;
+margin:8px auto;
+padding:10px;
 border-radius:8px;
-font-weight:bold;
+font-weight:600;
 cursor:pointer;
-transition:0.3s;
-}
-
-.poem-title:hover{
-transform:scale(1.03);
+font-size:14px;
 }
 
 .poem-box{
 background:#1a1a1a;
 margin:20px auto;
-padding:30px;
+padding:25px;
 width:90%;
 max-width:600px;
-border-radius:15px;
-box-shadow:0 0 20px rgba(255,215,0,0.4);
+border-radius:12px;
+box-shadow:0 0 15px rgba(255,215,0,0.3);
+font-size:15px;
 }
 
 .signature{
-margin-top:20px;
+margin-top:15px;
 color:gold;
 font-style:italic;
+font-size:14px;
 }
 
 footer{
@@ -101,6 +101,7 @@ text-align:center;
 padding:20px;
 background:black;
 margin-top:40px;
+font-size:14px;
 }
 
 footer a{
@@ -114,9 +115,9 @@ right:20px;
 bottom:20px;
 background:#E1306C;
 color:white;
-padding:14px;
+padding:12px;
 border-radius:50%;
-font-size:22px;
+font-size:20px;
 text-decoration:none;
 }
 </style>
@@ -124,52 +125,50 @@ text-decoration:none;
 
 <body>
 
+<nav>
+<button class="nav-btn" onclick="showSection('home')">Home</button>
+<button class="nav-btn" onclick="showSection('about')">About Author</button>
+<button class="nav-btn" onclick="showSection('journey')">Author Journey</button>
+</nav>
+
 <header>
 <h1>✨ Mr.Gold Kavithaigal ✨</h1>
 <h3>By Thangaselvam</h3>
 </header>
 
-<nav>
-<button class="nav-btn" onclick="switchSection('home')">Home</button>
-<button class="nav-btn" onclick="switchSection('about')">About Author</button>
-<button class="nav-btn" onclick="switchSection('journey')">Author Journey</button>
-</nav>
-
 <!-- HOME -->
 <div id="home" class="section active">
-<h2>📜 Kavithai Pattiyal</h2>
+<h3>📜 Kavithai Pattiyal</h3>
 <div id="poemList"></div>
 </div>
 
 <!-- POEM PAGE -->
 <div id="poemPage" class="section">
-<h2 id="poemTitle"></h2>
+<h3 id="poemTitle"></h3>
 <div class="poem-box">
 <div id="poemContent"></div>
 <div class="signature">— Mr.Gold ✍️</div>
 </div>
-<button class="nav-btn" onclick="switchSection('home')">⬅ Back</button>
+<button class="nav-btn" onclick="showSection('home')">⬅ Back</button>
 </div>
 
 <!-- ABOUT AUTHOR -->
 <div id="about" class="section">
-<h2 style="color:gold;">✨ About Author ✨</h2>
-<p>நான் Thangaselvam.</p>
+<h3 style="color:gold;">✨ About Author ✨</h3>
+<p>நான் Thangaselvam. “Mr.Gold” என்பது ஒரு பெயர் அல்ல — அது என் உணர்வுகளின் அடையாளம்.</p>
 <p>என் மனதில் தோன்றிய உணர்வுகளை வார்த்தைகளாக மாற்ற ஆரம்பித்தபோது தான் நான் என்னை கண்டேன்.</p>
-<p>எழுத்துகள் என் தனிமையின் தோழன். கவிதைகள் என் அடையாளம்.</p>
-<p>என் வரிகள் யாராவது ஒருவரின் மனதை தொட்டால் — அதுவே என் மிகப்பெரிய வெற்றி.</p>
-<button class="nav-btn" onclick="switchSection('home')">⬅ Back</button>
+<p>எழுத்துகள் என் தனிமையின் தோழன். கவிதைகள் என் உண்மையான முகம்.</p>
+<p>என் வரிகள் யாராவது ஒருவரின் மனதை தொட்டால் — அதுவே என் வெற்றி.</p>
 </div>
 
 <!-- AUTHOR JOURNEY -->
 <div id="journey" class="section">
-<h2 style="color:gold;">✨ Author Journey ✨</h2>
-<p>ஒரு சாதாரண மனிதனாக தொடங்கிய என் பயணம், உணர்வுகளால் நிறைந்த எழுத்தாளனாக மாறியது.</p>
+<h3 style="color:gold;">✨ Author Journey ✨</h3>
+<p>ஒரு சாதாரண மனிதனாக தொடங்கிய என் பயணம், உணர்வுகளை எழுதும் எழுத்தாளனாக மாறியது.</p>
 <p>பேச முடியாத தருணங்கள் இருந்தது. புரிந்து கொள்ள யாரும் இல்லாத நாட்களும் இருந்தது.</p>
 <p>அந்த நேரங்களில் நான் பேசியது காகிதத்தோடு தான்.</p>
 <p>அந்த எழுத்துகள் இன்று “Mr.Gold Kavithaigal” என்ற பெயரில் உங்கள் முன் நிற்கிறது.</p>
-<p>இது ஒரு இணையதளம் மட்டும் அல்ல — இது என் புதிய பயணம்.</p>
-<button class="nav-btn" onclick="switchSection('home')">⬅ Back</button>
+<p>இது ஒரு இணையதளம் மட்டும் அல்ல — இது என் மனசின் கதை.</p>
 </div>
 
 <footer>
@@ -250,16 +249,14 @@ list.appendChild(div);
 function showPoem(index){
 document.getElementById("poemTitle").innerText=poems[index].title;
 document.getElementById("poemContent").innerText=poems[index].text;
-switchSection("poemPage");
+showSection("poemPage");
 }
 
-function switchSection(id){
+function showSection(id){
 document.querySelectorAll(".section").forEach(sec=>{
 sec.classList.remove("active");
 });
-setTimeout(()=>{
 document.getElementById(id).classList.add("active");
-},50);
 }
 
 loadPoems();
