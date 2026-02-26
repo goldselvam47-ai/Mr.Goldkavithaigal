@@ -13,10 +13,17 @@
     }
 
     body {
-      background: #000;
-      color: #fff;
       font-family: "Georgia", serif;
       scroll-behavior: smooth;
+
+      /* Ancient background */
+      background:
+        linear-gradient(rgba(30,20,10,0.75), rgba(30,20,10,0.75)),
+        url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: #2b1b0f;
     }
 
     section {
@@ -24,12 +31,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 50px 30px;
-      text-align: center;
+      padding: 40px 20px;
 
       opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 1.3s ease, transform 1.3s ease;
+      transform: translateY(60px);
+      transition: opacity 1.4s ease, transform 1.4s ease;
     }
 
     section.show {
@@ -37,25 +43,38 @@
       transform: translateY(0);
     }
 
+    /* White book page */
     .page {
-      max-width: 700px;
+      background: #fdfaf4;
+      max-width: 720px;
+      width: 100%;
+      padding: 50px 35px;
+      border-radius: 6px;
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.4),
+        inset 0 0 40px rgba(0,0,0,0.05);
     }
 
     h1 {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 10px;
       letter-spacing: 2px;
     }
 
     h2 {
       font-size: 1.4rem;
-      margin-bottom: 25px;
-      opacity: 0.8;
+      text-align: center;
+      margin-bottom: 30px;
+      opacity: 0.7;
     }
 
     h3 {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+      border-bottom: 1px solid #d6c9b8;
+      padding-bottom: 8px;
       letter-spacing: 1px;
     }
 
@@ -65,34 +84,33 @@
       white-space: pre-line;
     }
 
-    .blank {
-      background: #000;
-    }
-
     footer {
       position: fixed;
-      bottom: 10px;
+      bottom: 8px;
       width: 100%;
       text-align: center;
       font-size: 0.8rem;
-      opacity: 0.4;
+      color: #eee;
+      opacity: 0.5;
     }
   </style>
 </head>
 
 <body>
 
-<!-- COVER PAGE -->
+<!-- COVER -->
 <section>
   <div class="page">
     <h1>Mr.Gold</h1>
     <h2>Kavithaigal</h2>
-    <p>scroll pannina mattum  
-kaadhal pesum…</p>
+    <p style="text-align:center;">
+      idhu oru website illa…  
+      idhu oru kaadhal.
+    </p>
   </div>
 </section>
 
-<!-- KAVITHAI PAGES -->
+<!-- POEMS -->
 
 <section><div class="page">
 <h3>காதலி</h3>
@@ -246,9 +264,8 @@ kaadhal pesum…</p>
 </p>
 </div></section>
 
-<!-- END PAGE -->
-<section class="blank">
-  <div class="page">
+<section>
+  <div class="page" style="text-align:center;">
     <p>— Mr.Gold</p>
   </div>
 </section>
